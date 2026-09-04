@@ -1199,7 +1199,7 @@ namespace rapidcsv
           {
             if (!quoted)
             {
-              row.push_back(mSeparatorParams.mTrim ? Trim(cell) : cell);
+              row.push_back(Unquote(mSeparatorParams.mTrim ? Trim(cell) : cell));
               cell.clear();
             }
             else
@@ -1227,7 +1227,7 @@ namespace rapidcsv
             else
             {
               ++lf;
-              row.push_back(mSeparatorParams.mTrim ? Trim(cell) : cell);
+              row.push_back(Unquote(mSeparatorParams.mTrim ? Trim(cell) : cell));
               cell.clear();
               mData.push_back(row);
               row.clear();
@@ -1245,7 +1245,7 @@ namespace rapidcsv
       // Handle last line without linebreak
       if (!cell.empty() || !row.empty())
       {
-        row.push_back(mSeparatorParams.mTrim ? Trim(cell) : cell);
+        row.push_back(Unquote(mSeparatorParams.mTrim ? Trim(cell) : cell));
         cell.clear();
         mData.push_back(row);
         row.clear();
@@ -1417,6 +1417,23 @@ namespace rapidcsv
       // rtrim
       str.erase(std::find_if(str.rbegin(), str.rend(), [](int ch) { return !isspace(ch); }).base(), str.end());
 
+      return str;
+    }
+
+    static std::string Unquote(const std::string& pStr)
+    {
+      if ((pStr.size() < 2) || (pStr.front() != '"') || (pStr.back() != '"'))
+      {
+        return pStr;
+      }
+
+      std::string str = pStr.substr(1, pStr.size() - 2);
+      size_t pos = 0;
+      while ((pos = str.find("\"\"", pos)) != std::string::npos)
+      {
+        str.replace(pos, 2, "\"");
+        ++pos;
+      }
       return str;
     }
 
