@@ -61,7 +61,7 @@ bool isCorrect(int guess, int answer) {
    return false;
 } // end function isCorrect
 
-
+// This is a comment block for the GuessNumber program
 
 /**************************************************************************
  * (C) Copyright 1992-2023 by Deitel & Associates, Inc. and               *
