@@ -15,6 +15,9 @@ int main() {
    std::cout << "Enter second integer: "; // prompt user for data
    std::cin >> number2; // read second integer from user into number2
 
+   std::cout << number1;7
+   
+
    sum = number1 + number2; // add the numbers; store result in sum
 
    std::cout << "Sum is " << sum << "\n"; // display sum

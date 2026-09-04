@@ -4,7 +4,7 @@
 
 // function main begins program execution
 int main() {
-   std::cout << "Welcome\nto\n\nC++!\n";
+   std::cout << "Welcome\nto\n\n\n\nC++!\n";
 } // end function main
 
 
