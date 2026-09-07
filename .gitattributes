@@ -1,0 +1,16 @@
+# Keep third-party library snapshots from dominating language stats
+examples/libraries/** linguist-vendored
+
+# Infra/tooling files should not define repo language identity
+.devcontainer/** linguist-generated
+Dockerfile linguist-generated
+**/*.sh linguist-generated
+
+# Ensure lesson source is recognized as C++
+examples/**/*.cpp linguist-language=C++
+examples/**/*.cc linguist-language=C++
+examples/**/*.cxx linguist-language=C++
+examples/**/*.hpp linguist-language=C++
+examples/**/*.hh linguist-language=C++
+examples/**/*.hxx linguist-language=C++
+examples/**/*.h linguist-language=C++
