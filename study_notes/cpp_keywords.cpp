@@ -46,7 +46,7 @@ and
 and_eq
 bitand
 bitor
-bool
+bool - For compatibility with C programs, TRUE can be represented by any non-zero value and FALSE by zero. Compilers typically use 1 for TRUE and 0 for FALSE.
 cat
 char16_t
 char32_t
