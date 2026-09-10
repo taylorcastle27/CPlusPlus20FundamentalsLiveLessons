@@ -11,6 +11,7 @@ int main() {
    
    // processing phase
    // prompt for input and read grade from user
+   // This initial read is sometimes called a priming read.
    cout << "Enter grade or -1 to quit: "; 
    int grade; 
    cin >> grade; 
@@ -41,6 +42,18 @@ int main() {
       cout << "No grades were entered\n"; 
    }
 } 
+
+
+// initialize variables;
+
+// read value;
+
+// while (value != sentinel) {
+//     process(value);
+//     read value;
+// }
+
+// finish;
 
 /**************************************************************************
  * (C) Copyright 1992-2022 by Deitel & Associates, Inc. and               *
